@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+int isvowel(char c);
+int main()
+{
+    int i,k=0;
+    char a[50],t[50]="",b[50]="";
+    printf("\n enter a string:");
+    scanf("%s",a);
+    for(i=0;a[i]!='\0';i++)
+    {
+        if(!isvowel(a[i]))
+        {
+            t[k]=a[i];
+            k++;
+        }
+    }
+    strrev(t);
+    k=0;
+    for(i=0;a[i]!='\0';i++)
+    {
+        if(isvowel(a[i]))
+        {
+            b[i]=a[i];
+
+        }
+        else
+        {
+            b[i]=t[k];
+            k++;
+        }
+    }
+    printf("\n%s",b);
+
+}
+int isvowel(char c)
+{
+    char vowels[10]={'a','e','i','o','u','A','E','I','O','U'};
+    int i;
+    for(i=0;i<10;i++)
+    {
+        if(vowels[i]==c)
+            return 1;
+    }
+    return 0;
+}

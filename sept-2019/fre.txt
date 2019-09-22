@@ -1,0 +1,27 @@
+#include<stdio.h>
+void main()
+{
+char a[100];
+int i;
+int freq[26]={0};
+printf("enter string");
+scanf("%s",a);
+for(i=0;a[i]!='\0';i++)
+{
+if(a[i]>='a' && a[i]<='z')
+{
+freq[a[i]-'a']++;
+}
+else if(a[i]>='A' && a[i]<='Z')
+{
+freq[a[i]-'A']++;
+}
+}
+for(i=0;i<26;i++)
+{
+if(freq[i]!=0)
+{
+printf("%c-%d\n",a[i],freq[i]);
+}
+}
+}
